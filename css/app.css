@@ -1,0 +1,281 @@
+/* Fonts */
+:root {
+  --default-font: "Roboto", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --nav-font: "Jua", sans-serif;
+  --ect-font: "Yeon Sung", Static;
+}
+
+
+@font-face {
+  font-family: 'HSSaemaul-Regular';
+  src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2108@1.1/HSSaemaul-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* document */
+body {
+  background-color: #bad7df;
+  font-family: HSSaemaul-Regular;
+  font-size: 1.2rem;
+}
+
+h2 {
+  font-size: 2.5rem;
+}
+
+
+/* header & nav */
+nav {
+  background-color: #e9c3d9;
+  color: #fff;
+  font-family: var(--nav-font);
+  font-size: 1.3rem;
+}
+
+.navbar {
+  transition: all 0.5s;
+}
+
+.navbar-scrolled {
+  background-color: rgba(186, 215, 223, 0.5);
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
+}
+
+.nav-link {
+  position: relative;
+  padding-bottom: 5px;
+}
+
+.nav-link::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  border: 0;
+  left: 50%;
+  bottom: 0;
+  background-color: #fff;
+  transition: all 0.3s ease-in-out;
+}
+
+.nav-link.active::after {
+  width: 100%;
+  left: 0;
+}
+
+
+/* navbar-logo */
+.navbar-brand {
+  font-size: 2rem;
+}
+
+
+/* navbar-search */
+.btn-top {
+  color: #69c4dd;
+  border-color: #9ac5d0;
+}
+
+.btn-top:hover {
+  background-color: #8dc0ce;
+}
+
+
+/* carousel */
+.top-carousel {
+  filter: brightness(0.6);
+}
+
+
+/* first card box */
+.u-card {
+  background-color: #78c3c9;
+  border: none;
+  letter-spacing: 0.2rem;
+}
+
+.hello {
+  margin: auto;
+  background-color: rgba(255, 255, 255, 0.7);
+}
+
+
+/* skill */
+.progress-bar {
+  transition: width 1s ease-in-out;
+  position: relative;
+}
+
+
+/* timeline test 1 */
+.horizontal-timeline .items {
+  border-top: 3px solid #fff;
+}
+
+.horizontal-timeline .items .items-list {
+  display: block;
+  position: relative;
+  text-align: center;
+  padding-top: 70px;
+  margin-right: 0;
+  vertical-align: top;
+}
+
+.horizontal-timeline .items .items-list.items-list::before {
+  content: "";
+  position: absolute;
+  height: 36px;
+  border-right: 2px dashed #fff;
+  top: 0;
+}
+
+.horizontal-timeline .items .items-list .event-date {
+  position: absolute;
+  top: 36px;
+  left: 0;
+  right: 0;
+  width: 75px;
+  margin: 0 auto;
+  font-size: 0.9rem;
+  padding-top: 8px;
+}
+
+
+@media (min-width: 1140px) {
+  .horizontal-timeline .items .items-list {
+    display: inline-block;
+    width: 24%;
+    padding-top: 45px;
+  }
+
+  .horizontal-timeline .items .items-list .event-date {
+    top: -40px;
+  }
+}
+
+
+/* second card */
+.card {
+  padding: 5px;
+}
+
+.read :hover {
+  transform: scale(1.1);
+  transition: 1s;
+}
+
+
+/* portfolio search */
+#searchInput {
+  margin-bottom: 1.5rem;
+}
+
+.filter-btn {
+  margin-right: 1rem;
+  margin-bottom: 1rem;
+}
+
+/* portfolio */
+.portfolio-item {
+  cursor: pointer;
+  margin-bottom: 1.8rem;
+}
+
+.portfolio-item:hover img {
+  transform: scale(1.02);
+  transition: 1s;
+  filter: brightness(70%);
+}
+
+.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+/* scroll-top-icon */
+.scroll-top {
+  position: fixed;
+  visibility: hidden;
+  opacity: 0;
+  right: 15px;
+  bottom: 15px;
+  z-index: 99999;
+  background-color: #e9c3d9;
+  width: 40px;
+  height: 40px;
+  border-radius: 4px;
+  transition: all 0.4s;
+}
+
+.scroll-top i {
+  font-size: 24px;
+  color: #fff;
+  line-height: 0;
+}
+
+.scroll-top:hover {
+  background-color: #8dc0ce;
+  color: #fff;
+}
+
+.scroll-top.active {
+  visibility: visible;
+  opacity: 1;
+}
+
+/* preloader */
+#preloader {
+  position: fixed;
+  inset: 0;
+  z-index: 999999;
+  overflow: hidden;
+  background: #fff;
+  transition: all 0.6s ease-out;
+}
+
+#preloader::before {
+  content: "";
+  position: fixed;
+  top: calc(50% - 30px);
+  left: calc(50% - 30px);
+  border: 6px solid #000000;
+  border-color: #8dc0ce transparent #e9c3d9 transparent;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  animation: animate-preloader 1.5s linear infinite;
+}
+
+@keyframes animate-preloader {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* footer */
+footer {
+  background-color: #e9c3d9;
+  color: #fff;
+  padding: 2rem 0;
+  font-family: var(--nav-font);
+}
+
+.footer ul {
+  list-style: none;
+  padding: 0 0 0 0;
+}
+
+.footer li {
+  padding-bottom: 6px;
+}
+
+.footer a {
+  text-decoration: none;
+  color: #fff;
+}
